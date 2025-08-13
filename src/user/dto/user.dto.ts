@@ -1,7 +1,7 @@
 export type UserDto = {
   id: string;
   name: string;
-  age: string;
+  email: string;
   createdAt: Date;
   updatedAt: Date;
 };
