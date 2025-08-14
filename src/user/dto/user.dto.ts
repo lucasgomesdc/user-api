@@ -11,4 +11,7 @@ export type CreateUserDto = {
   email: string;
 };
 
+//to do
+// classvalidator
+
 export type UpdateUserDto = Partial<CreateUserDto>;
