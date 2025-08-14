@@ -9,7 +9,6 @@ import { UserMapper } from 'src/user/mappers/user.mapper';
 import { USERS_ALL_CACHE_KEY } from 'src/shared/constants';
 import { UserDto } from 'src/user/dto/user.dto';
 
-// Mocks “puros” para o repositório e cache
 const repoMock = {
   find: jest.fn(),
   findOne: jest.fn(),
@@ -91,7 +90,6 @@ describe('UserService', () => {
       cacheMock.get.mockResolvedValueOnce(undefined);
       repoMock.find.mockResolvedValueOnce(entities);
 
-      // Espiona métodos estáticos do mapper
       const toArraySpy = jest
         .spyOn(UserMapper, 'toDtoArray')
         .mockReturnValue(mappedDtos);

@@ -16,7 +16,6 @@ export class RequestLoggingMiddleware implements NestMiddleware {
     const reqId = req.header('x-request-id') ?? nanoid(10);
     res.setHeader('x-request-id', reqId);
 
-    // adiciona reqId em todos os logs desse request (child logger)
     const log = this.winston.child({
       reqId,
       path: req.path,
