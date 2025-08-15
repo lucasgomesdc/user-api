@@ -8,6 +8,10 @@ async function bootstrap() {
   const logger = app.get<Logger>(WINSTON_MODULE_NEST_PROVIDER);
   app.useLogger(logger);
 
+  app.enableCors({
+    origin: 'http://localhost:3000',
+  });
+
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

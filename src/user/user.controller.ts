@@ -24,7 +24,7 @@ export class UserController {
     return this.userService.getUsers();
   }
 
-  @Post()
+  @Post('/')
   createUser(@Body() body: CreateUserDto): Promise<UserDto> {
     return this.userService.createUser(body);
   }
